@@ -1,24 +1,24 @@
 import Login from "../pages/login.page";
 import testdata from "../fixtures/login.json";
 
-describe("Login fuction", () => {
+describe("Login function", () => {
   beforeEach(() => {
     Login.visit();
   });
 
-  it("TC-001: verify login if no email is entered should display error messsage", () => {
+  it("TC-001:login if no email is entered should display error messsage", () => {
     Login.enterPassword(testdata.valid_password);
     Login.submit();
     Login.findRequiredField("#email-error", "This is a required field.");
   });
 
-  it("TC-002: verify login if no password is entered should display error messsage", () => {
+  it("TC-002:login if no password is entered should display error messsage", () => {
     Login.enterEmail(testdata.email);
     Login.submit();
     Login.findRequiredField("#pass-error", "This is a required field.");
   });
 
-  it("TC-003: verify login fuction with invalid credential", () => {
+  it("TC-003:login with invalid credential", () => {
     Login.enterEmail(testdata.email);
     Login.enterPassword(testdata.invalid_password);
     Login.submit();
@@ -27,14 +27,14 @@ describe("Login fuction", () => {
     );
   });
 
-  it("TC-004: verify login fuction with valid credential", () => {
+  it("TC-004:login with valid credential", () => {
     Login.enterEmail(testdata.email);
     Login.enterPassword(testdata.valid_password);
     Login.submit();
     Login.verifyUrl();
   });
 
-  it.only("TC-005: verify Forgot Your Password fuction", () => {
+  it.only("TC-005:verify Forgot Your Password fuction", () => {
     Login.clickForgotPassword();
     Login.enterEmailForForgotPassword(testdata.email);
     Login.submitForgotPassword();

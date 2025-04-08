@@ -3,6 +3,6 @@
   "lastname": "Cypress",
   "email": "testCy@gmail.com",
   "valid_password_format": "Test123!",
-  "invalid_password_format": "test123",
+  "invalid_password_format": "test1234",
   "short_password_format": "Test123"
 }
